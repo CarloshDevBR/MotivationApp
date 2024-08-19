@@ -9,4 +9,6 @@
     <string name="button_save">Salvar</string>
     <string name="title_save_screen">Vamos começar?</string>
     <string name="edit_save_screen">Qual seu nome?</string>
+
+    <string name="validation_name">Informe seu nome!</string>
 </resources>

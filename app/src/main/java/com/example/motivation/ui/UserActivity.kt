@@ -9,8 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.motivation.infra.KEY
 import com.example.motivation.R
+import com.example.motivation.infra.MotivationConstants
 import com.example.motivation.infra.SecurityPreferences
 
 class UserActivity : AppCompatActivity() {
@@ -37,7 +37,7 @@ class UserActivity : AppCompatActivity() {
         val name = findViewById<TextView>(R.id.edit_name).text.toString()
 
         if (name != "") {
-            SecurityPreferences(this).storeString(KEY.USER_NAME, name)
+            SecurityPreferences(this).storeString(MotivationConstants.KEY.USER_NAME, name)
 
             startActivity(Intent(this, MainActivity::class.java))
             finish()
@@ -47,7 +47,7 @@ class UserActivity : AppCompatActivity() {
     }
 
     private fun verifyUserName() {
-        val name = SecurityPreferences(this).getString(KEY.USER_NAME)
+        val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
 
         if(name != "") {
             startActivity(Intent(this, MainActivity::class.java))

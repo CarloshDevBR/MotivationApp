@@ -3,7 +3,7 @@
     <string name="tab_01">tab_01</string>
     <string name="tab_02">tab_02</string>
     <string name="tab_03">tab_03</string>
-    <string name="title">Olá Kotlin</string>
+    <string name="title">Olá</string>
     <string name="message">Riscos devem ser corrigidos, porque o maior perigo é não arriscar nada!</string>
     <string name="button_generate">Nova frase</string>
     <string name="button_save">Salvar</string>

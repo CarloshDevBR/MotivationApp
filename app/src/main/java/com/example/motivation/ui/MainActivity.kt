@@ -1,5 +1,6 @@
 package com.example.motivation.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -27,7 +28,15 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        verifyUserName()
+
         handleUserName()
+
+        val text_name = findViewById<TextView>(R.id.text_user_name)
+
+        text_name.setOnClickListener {
+            handleNavigateUser()
+        }
 
         val image_all = findViewById<ImageView>(R.id.image_all)
         val image_happy = findViewById<ImageView>(R.id.image_happy)
@@ -80,11 +89,27 @@ class MainActivity : AppCompatActivity() {
         image.setColorFilter(ContextCompat.getColor(this, R.color.white))
     }
 
+    private fun handleNavigateUser() {
+        SecurityPreferences(this).removeString(MotivationConstants.KEY.USER_NAME)
+
+        startActivity(Intent(this, UserActivity::class.java))
+        finish()
+    }
+
     private fun handleUserName() {
         val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
 
         val title = findViewById<TextView>(R.id.text_user_name)
 
         title.text = "Olá, $name"
+    }
+
+    private fun verifyUserName() {
+        val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
+
+        if(name == "") {
+            startActivity(Intent(this, UserActivity::class.java))
+            finish()
+        }
     }
 }

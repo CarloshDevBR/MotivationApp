@@ -24,8 +24,6 @@ class UserActivity : AppCompatActivity() {
             insets
         }
 
-        verifyUserName()
-
         val button_save = findViewById<Button>(R.id.button_save)
 
         button_save.setOnClickListener {
@@ -43,15 +41,6 @@ class UserActivity : AppCompatActivity() {
             finish()
         } else {
             Toast.makeText(this, R.string.validation_name, Toast.LENGTH_LONG).show()
-        }
-    }
-
-    private fun verifyUserName() {
-        val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
-
-        if(name != "") {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
         }
     }
 }

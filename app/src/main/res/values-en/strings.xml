@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Motivation</string>
+    <string name="tab_01">tab_01</string>
+    <string name="tab_02">tab_02</string>
+    <string name="tab_03">tab_03</string>
+    <string name="title">Hello</string>
+    <string name="message">Risks must be corrected, because the greatest danger is not risking anything!</string>
+    <string name="button_generate">New quote</string>
+    <string name="button_save">Save</string>
+    <string name="title_save_screen">Shall we start?</string>
+    <string name="edit_save_screen">What\'s your name?</string>
+
+    <string name="validation_name">Please enter your name!</string>
+</resources>

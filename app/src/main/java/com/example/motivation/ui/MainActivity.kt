@@ -14,6 +14,7 @@ import com.example.motivation.R
 import com.example.motivation.data.Mock
 import com.example.motivation.infra.MotivationConstants
 import com.example.motivation.infra.SecurityPreferences
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     private var categoryId: Int = MotivationConstants.FILTER.ALL
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         val button_generate = findViewById<Button>(R.id.button_generate)
 
         button_generate.setOnClickListener {
-            val phrase = Mock().getPhrash(categoryId)
+            val phrase = Mock().getPhrash(categoryId, Locale.getDefault().language)
 
             text_phrase.text = phrase
         }
@@ -101,7 +102,9 @@ class MainActivity : AppCompatActivity() {
 
         val title = findViewById<TextView>(R.id.text_user_name)
 
-        title.text = "Olá, $name"
+        val msg = getString(R.string.title)
+
+        title.text = "$msg, $name"
     }
 
     private fun verifyUserName() {
